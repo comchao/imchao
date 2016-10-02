@@ -11,7 +11,9 @@ import db.ConnectionManager;
 //คลาสMemberDAO
 public class MemberDAO {
 
-	
+	static Connection dbconConnection = null;
+	static PreparedStatement pre = null;
+	static ResultSet rs = null;
 //ประกาศเมธอด
 	public static MemberBean register(MemberBean bean) {
 
