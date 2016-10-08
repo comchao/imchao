@@ -7,12 +7,12 @@
 หน้าที่ใช้ 
 ProductsBean.java    คือหน้า Bean
 ProductsDAO.java     คือหน้า DAO
-ProductsServlet.java คือหน้า  Servlet
+ProductsServlet.java คือหน้า  Servlet //รันหน้านี้นะครับ
 Products.jsp         คือหน้าเเสดงผล  JSP
 
 
 //เรียกรูปประเภทสินค้า
 CategoryBean.java    คือหน้า Bean
 CategoryDAO.java     คือหน้า DAO
-categoryServlet.java คือหน้า  Servlet
+categoryServlet.java คือหน้า  Servlet //รันหน้านี้นะครับ
 CategoryPhoto.jsp    คือหน้า เเสดงผล  JSP

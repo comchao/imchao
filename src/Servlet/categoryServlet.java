@@ -82,9 +82,7 @@ public class categoryServlet extends HttpServlet {
             catch (Throwable theException)         {     
 		    	   System.out.println(theException);   
 		    	   } 
-
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
