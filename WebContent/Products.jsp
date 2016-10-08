@@ -504,8 +504,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
+    
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -518,7 +517,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
+              <h3 class="box-title">ข้อมูลสินค้าทั้งหมด</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -529,7 +528,7 @@
                   <th>ProductName</th>					<!-- 2 -->
                   <th>SupplierID</th>					<!-- 3-->
                   <th>CategoryID</th>					<!-- 4 -->
-                  <th>QuantityPerUnit</th>			   <!-- 5-->
+                  <th>QuantityPerUnit</th>			    <!-- 5-->
                   <th>UnitPrice</th>					<!-- 6-->
                   <th>UnitsInStock</th>					<!-- 7 -->
                   <th>UnitsOnOrder</th>					<!-- 8 -->

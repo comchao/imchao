@@ -6,9 +6,7 @@ public class CategoryBean {
 	private String CategoryName;
 	private String Description;
 	private String Picture;
-	
 	private boolean isVaild;
-
 	public int getCategoryID() {
 		return CategoryID;
 	}
