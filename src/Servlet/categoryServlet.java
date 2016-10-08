@@ -16,7 +16,8 @@ import javax.servlet.http.HttpSession;
 import com.mysql.fabric.xmlrpc.base.Array;
 
 import Bean.CategoryBean;
-import DAO.ProductsDAO1;
+import DAO.CategoryDAO;
+
 
 
 /**
@@ -48,9 +49,9 @@ public class categoryServlet extends HttpServlet {
 		if (id != null) {
 			try {
 			
-				ProductsDAO1 productDAO = new ProductsDAO1();
+				CategoryDAO DAO = new CategoryDAO();
 			
-				imgData = productDAO.getCatrgoryPicture(Integer.parseInt(id));
+				imgData = DAO.getCatrgoryPicture(Integer.parseInt(id));
 				
 				response.setContentType("image/jpg");
 				OutputStream o = response.getOutputStream();
@@ -64,11 +65,11 @@ public class categoryServlet extends HttpServlet {
 		}
 		
 		try   {       
-			ProductsDAO1 catdao= new ProductsDAO1();     
-			ArrayList<CategoryBean> categories = catdao.getCategories();
+			CategoryDAO DAO = new CategoryDAO();     
+			ArrayList<CategoryBean> Categories = DAO.getCategories();
 			System.out.println("here servlet");
-			request.setAttribute("categoryList", categories);
-		   		String page = "indexPic.jsp";
+			request.setAttribute("categoryList", Categories);
+		   		String page = "CategoryPhoto.jsp";
 		   		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 		   		if(dispatcher != null){
 		   			

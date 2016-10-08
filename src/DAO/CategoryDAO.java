@@ -11,7 +11,8 @@ import Bean.CategoryBean;
 import Bean.ProductsBean;
 import db.ConnectionManager;
 
-public class ProductsDAO1 {
+
+public class CategoryDAO {
 	//ตัวแปรเชื่อมฐานข้อมูล
 	static Connection dbconConnection = null;
 	ResultSet rs = null; //ตัวแปรคำสั่งSQL
@@ -60,6 +61,7 @@ List.add(ProductsList);
 	return List;
 	
 }
+
 //ประเภทสินค้าทั้งหมด
 	public ArrayList<CategoryBean> getCategories() {
 		ArrayList<CategoryBean> Categories = new ArrayList<CategoryBean>();
@@ -101,9 +103,6 @@ List.add(ProductsList);
 		try {
 			dbconConnection = ConnectionManager.getConnection();
 			//เตรียมใช้คำสั่ง SQL
-			
-	
-			
 			Statement stmt = dbconConnection.createStatement(); // เตรียมใช้คำสั่ง
 																// SQL
 			rs = stmt.executeQuery(searchQuery); 				// run คำสั่ง SQL

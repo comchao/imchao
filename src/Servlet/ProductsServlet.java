@@ -36,21 +36,24 @@ public class ProductsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		
 		request.setCharacterEncoding("utf-8");  
-		response.setCharacterEncoding("utf-8");//การเรียกใช้ArrayList
-		try{
-			ProductsDAO dao = new ProductsDAO(); //เรียกใช้ProductsDAO
-			ArrayList<ProductsBean> list= dao.getList();   //เรียกใช้ArrayList
-			request.setAttribute("show",list);  //เอาค่าไปเเสดง
-			String page = "Hi.jsp" ;//เเสดงหน้า
-			RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-			if(dispatcher !=null){
-				dispatcher.forward(request,response);
-			}}catch(Throwable theException)
-			{System.out.println(theException);
-		}
-		}
+		response.setCharacterEncoding("utf-8");
+		
+		try {
+			
+			ProductsDAO dao = new  ProductsDAO();
+	        ArrayList<ProductsBean> list  = dao.getList();
+	        request.setAttribute("show",list);
+	        String page = "Products.jsp"; 
+	        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+	        
+		if(dispatcher !=null){
+			dispatcher.forward(request,response);
+			
+		}}catch(Throwable theException)
+		{System.out.println(theException);
+	}
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

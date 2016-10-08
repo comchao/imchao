@@ -1,5 +1,7 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  <%@ page import="Bean.ProductsBean" %>
+    <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -523,34 +525,44 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>ProductID</th>
-                  <th>ProductName</th>
-                  <th>SupplierID</th>
-                  <th>CategoryID</th>
-                  <th>UnitPrice</th>
+                  <th>ProductID</th> 					<!-- 1 -->
+                  <th>ProductName</th>					<!-- 2 -->
+                  <th>SupplierID</th>					<!-- 3-->
+                  <th>CategoryID</th>					<!-- 4 -->
+                  <th>QuantityPerUnit</th>			   <!-- 5-->
+                  <th>UnitPrice</th>					<!-- 6-->
+                  <th>UnitsInStock</th>					<!-- 7 -->
+                  <th>UnitsOnOrder</th>					<!-- 8 -->
                 </tr>
                 </thead>
                 <tbody>
+                 <% ArrayList<ProductsBean> list =(ArrayList)request.getAttribute("show");
+request.setCharacterEncoding("utf-8");  
+response.setCharacterEncoding("utf-8");
+ProductsBean bean; 
+for (int i=0; i<list.size(); i++){
+	          bean = (ProductsBean) list.get(i);
+	          %> 
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                 <td><%=bean.getProductID() %></td> 				<!-- 1 -->
+				<td><%=bean.getProductName() %></td>				<!-- 2 -->
+				<td><%=bean.getSupplierID() %></td>					<!-- 3 -->
+				<td><%=bean.getCategoryID() %></td>					<!-- 4 -->
+				<td><%=bean.getQuantityPerUnit() %></td>			<!-- 5 -->
+				<td><%=bean.getUnitPrice() %></td>					<!-- 6 -->
+				<td><%=bean.getUnitsInStock() %></td>				<!-- 7 -->
+				<td><%=bean.getUnitsOnOrder() %></td>				<!-- 8 -->
+				
+                        	
                 </tr>
-               
-                <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
-                </tfoot>
+           
+                    <% } %>
+              
+              
+             
+                
               </table>
+                 
             </div>
             <!-- /.box-body -->
           </div>
