@@ -25,21 +25,29 @@ public class CategoryDAO {
 		ArrayList<CategoryBean> Categories = new ArrayList<CategoryBean>();
 
 		Statement stmt = null;
+				//คําสั่ง SQL
 		String sql = "SELECT * FROM Categories";
 		try {
 			dbconConnection = ConnectionManager.getConnection();
 			//เตรียมใช้คำสั่ง SQL
 			stmt =  dbconConnection.createStatement();
+			
+			//run คําสั่ง SQL
 			rs = stmt.executeQuery(sql);
 			CategoryBean categoryBean;
 
 			while (rs.next()) {
+				//ประกาศเรียกใช้CategoryBean ทุกครั้งเมื่อเข้าลูป
 				categoryBean = new CategoryBean();
+				//เก็บข้อมูลแต่ละ column ไว้ในตัวแปร bean
 				categoryBean.setCategoryID(rs.getInt("CategoryID"));
 				categoryBean.setCategoryName(rs.getString("CategoryName"));
 				categoryBean.setDescription(rs.getString("Description"));
+				
+				//เก็บข้อมูล bean ไว้ที่ categoryList
 				Categories.add(categoryBean);
 			}
+			//ปิดการทํางาน rs
 			rs.close();
 		} catch (Exception ex) {
 			
