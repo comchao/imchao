@@ -35,7 +35,8 @@ public class ProductsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		
 		request.setCharacterEncoding("utf-8");  
 		response.setCharacterEncoding("utf-8");//การเรียกใช้ArrayList
 		try{
@@ -44,14 +45,12 @@ public class ProductsServlet extends HttpServlet {
 			request.setAttribute("show",list);  //เอาค่าไปเเสดง
 			String page = "Hi.jsp" ;//เเสดงหน้า
 			RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-			if(dispatcher != null){
-				
+			if(dispatcher !=null){
 				dispatcher.forward(request,response);
-				
-			}}catch (Throwable theException)
-		{
-				System.out.println(theException);  //เเสดงข้อผิดพลาด
-		}}
+			}}catch(Throwable theException)
+			{System.out.println(theException);
+		}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

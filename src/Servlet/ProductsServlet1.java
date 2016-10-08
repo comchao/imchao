@@ -33,7 +33,7 @@ public class ProductsServlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		
 		request.setCharacterEncoding("utf-8");  
 		response.setCharacterEncoding("utf-8");
