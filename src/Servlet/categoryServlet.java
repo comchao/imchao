@@ -41,37 +41,48 @@ public class categoryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//เรียกรูปประเภทสินค้า CategoryBean
-		byte[] imgData = null;
+	
+                              //เรียกรูปประเภทสินค้า CategoryBean
+		
+		byte[] imgData = null; //ประกาศตัวแปร  imgData
+		
 		//รับฟอร์มid
 		String id = request.getParameter("id");
 		
-		if (id != null) {
+		if (id != null) { //ตัวสอบเงื่อนไข  id != null
 			try {
-			
+				// สร้าง Object จาก Class CategoryDAO
 				CategoryDAO DAO = new CategoryDAO();
-			
+				
+				// ค้นหารูปภาพประเภทสินค้า
 				imgData = DAO.getCatrgoryPicture(Integer.parseInt(id));
 				
+				// set picture format with jpg
 				response.setContentType("image/jpg");
 				OutputStream o = response.getOutputStream();
 			
-				o.write(imgData);
-				o.flush();
-				o.close();
-			} catch (Exception e) {
-				e.printStackTrace();
+				o.write(imgData); // render picture
+				o.flush();        // clear render picture
+				o.close();        //ปิดการทำงาน
+				
+			} catch (Exception e) { 
+				e.printStackTrace(); //ตรวจสอบข้อผิดพลาด
 			}
 		}
 		
 		try   {    
 			
-			//เรียกประเภทCategoryBean
+			 				//เรียกประเภทCategoryBean
+			
+			// สร้าง Object จาก Class CategoryDAO
 			CategoryDAO DAO = new CategoryDAO();     
+			
+			//เรียกใช้ ArrayListจากDAO
 			ArrayList<CategoryBean> Categories = DAO.getCategories();
+			
 			request.setAttribute("categoryList", Categories);
-		   		String page = "CategoryPhoto.jsp";
+		   		            //เเสดงค่า
+			String page = "CategoryPhoto.jsp";
 		   		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 		   		if(dispatcher != null){
 		   			
@@ -80,7 +91,7 @@ public class categoryServlet extends HttpServlet {
 		}    	                
 		    	                      
             catch (Throwable theException)         {     
-		    	   System.out.println(theException);   
+		    	   System.out.println(theException);    //ตรวจสอบค่าผิดพลาด
 		    	   } 
 	}
 	/**

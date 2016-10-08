@@ -32,11 +32,12 @@ public ArrayList<ProductsBean> getList(){
     	dbconConnection = ConnectionManager.getConnection(); //เรียกใช้หน้าเชื่ือมฐานข้อมูล
     	stmt = dbconConnection.createStatement(); //เตรียมใช้คำสั่ง SQL
     	rs = stmt.executeQuery(selectSQL); //Queryคำสั่งSQL
+    	
     	ProductsBean  ProductsList;  //อออบเจคProductsList //ออบเจคของคลาสProductsBean
     	
     	while (rs.next()){
     		
-    		ProductsList = new ProductsBean();
+    		ProductsList = new ProductsBean(); //เรียกใช้bean
     		//กำหนดค่าให้//อ๊อบเจ็ค ProductsList 
     		ProductsList.setProductID(rs.getInt("ProductID"));
     		ProductsList.setProductName(rs.getString("ProductName"));
@@ -50,7 +51,7 @@ public ArrayList<ProductsBean> getList(){
     		ProductsList.setDiscontinued(rs.getInt("Discontinued"));
     		
     		//List
-    		List.add(ProductsList); 
+    		List.add(ProductsList); //setลงBean
     		
     	}
     	rs.close();    //ปิดการทำงาน  rs
