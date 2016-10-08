@@ -20,9 +20,10 @@ public class CategoryDAO {
 	// ส่วนของการเรียกข้อมูลทั้งหมดจากตาราง ในรูป ArrayList
 
 	                 // ประเภทสินค้าCategories
-	//ประกาศเมธอด รูปเบบอาเรลิสต์
+	//ประกาศเมธอด รูปเบบอาเรลิสต์     ที่มีชื่อว่า getCategories
 	public ArrayList<CategoryBean> getCategories() {
 		//เรียกใช้ArrayList
+		//ประกาศออบเจค Categories เป็นออบเจคของอาเรลิสต์เพื่อก็บข้อมูล เป็นออบเจคที่ใช้ในการเเล้วส่งค่าคืนช้อมูลของเมธอด
 		ArrayList<CategoryBean> Categories = new ArrayList<CategoryBean>();
 		//ประกาศตัวแปร stmt
         Statement stmt = null;

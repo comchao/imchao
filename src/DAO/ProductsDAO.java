@@ -17,9 +17,11 @@ public class ProductsDAO {
 static Connection dbconConnection = null; // ตัวแปรเชื่อมต่อฐานข้อมูล
 ResultSet rs = null;					//ตัวแปรQueryคําสั่ง SQL
 static PreparedStatement preparedStmt;  //ตัวแปรpreparedStmt ไปเรียกใช้Queryคําสั่ง SQL
-//ประกาศเมธอด รูปเบบอาเรลิสต์   คลาส ProductsBean  ออบเจค การGetค่าจากList
+
+//ประกาศเมธอด รูปเบบอาเรลิสต์   ที่มีชื่อว่า getList
 public ArrayList<ProductsBean> getList(){ 
-	//เรียกใช้ArrayList จาก  ProductsBean
+
+	//ประกาศออบเจค List เป็นออบเจคของอาเรลิสต์เพื่อก็บข้อมูล เป็นออบเจคที่ใช้ในการเเล้วส่งค่าคืนช้อมูลของเมธอด
 	ArrayList<ProductsBean> List = new ArrayList <ProductsBean>();//ตัวแปรชื่อ  List
 	
     Statement stmt = null ; //ตัวแปรเตรียมการทำงานคำสั่ง SQL  ออบเจค stmt 
