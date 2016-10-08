@@ -1,0 +1,18 @@
+
+
+//การเอาข้อมูลทั้งหมดของ Products มาเเสดง ในรูปเเบบตาราง 
+- สามารถค้นหาข้อมูลได้
+- สามารถเรียงลําดับข้อมูลตามหัวข้อที่ต้องการได้
+- สามารถแบ่งหน้าผลการค้นหาได้ 
+หน้าที่ใช้ 
+ProductsBean.java    คือหน้า Bean
+ProductsDAO.java     คือหน้า DAO
+ProductsServlet.java คือหน้า  Servlet
+Products.jsp         คือหน้าเเสดงผล  JSP
+
+
+//เรียกรูปประเภทสินค้า
+CategoryBean.java    คือหน้า Bean
+CategoryDAO.java     คือหน้า DAO
+categoryServlet.java คือหน้า  Servlet
+CategoryPhoto.jsp    คือหน้า เเสดงผล  JSP
