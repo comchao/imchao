@@ -42,8 +42,9 @@ public class categoryServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+//เรียกรูปประเภทสินค้า CategoryBean
 		byte[] imgData = null;
+		//รับฟอร์มid
 		String id = request.getParameter("id");
 		
 		if (id != null) {
@@ -64,10 +65,11 @@ public class categoryServlet extends HttpServlet {
 			}
 		}
 		
-		try   {       
+		try   {    
+			
+			//เรียกประเภทCategoryBean
 			CategoryDAO DAO = new CategoryDAO();     
 			ArrayList<CategoryBean> Categories = DAO.getCategories();
-			System.out.println("here servlet");
 			request.setAttribute("categoryList", Categories);
 		   		String page = "CategoryPhoto.jsp";
 		   		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
