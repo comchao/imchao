@@ -577,7 +577,7 @@
                 <h1 class="page-header">CategoryPhoto</h1>
             </div>
             
-            <form action="CategoryIDServlet" method="get">
+            
             
             
             
@@ -601,7 +601,7 @@
 								i++;
 								}
 							%>
-							</form>
+							
 			
 			</div>
            

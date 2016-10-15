@@ -113,4 +113,44 @@ public class ProductsDAO {
 	}
 
 	// เอาข้อมูลของ ประเภท CategoryID ในตาราง Product
+	public ArrayList<ProductsBean> getAllTable(int CategoryID) {
+		ArrayList<ProductsBean> List = new ArrayList<ProductsBean>();
+		;
+		String query = "SELECT products.*,CompanyName,CategoryName "
+				+ "FROM products,suppliers,categories "
+				+ "WHERE products.SupplierID = suppliers.SupplierID "
+				+ "AND products.CategoryID = categories.CategoryID "
+				+ "AND products.CategoryID=?";
+		
+		try {
+			dbconConnection = ConnectionManager.getConnection();
+			preparedStmt = dbconConnection.prepareStatement(query);
+			preparedStmt.setInt(1, CategoryID);
+			rs = preparedStmt.executeQuery();
+			ProductsBean CategoryList;
+			while (rs.next()) {
+				CategoryList = new ProductsBean();
+				CategoryList.setProductID(rs.getInt("ProductID"));					//*1
+				System.out.println("ProductID:=" + CategoryList.getProductID()); 
+				CategoryList.setProductName(rs.getString("ProductName"));			//*2
+				System.out.println("ProductID:=" + CategoryList.getProductName());
+				CategoryList.setQuantityPerUnit(rs.getString("QuantityPerUnit"));	//*3
+				System.out.println("ProductID:=" + CategoryList.getQuantityPerUnit());
+				CategoryList.setUnitPrice(rs.getFloat("UnitPrice"));				//*4
+				System.out.println("ProductID:=" + CategoryList.getUnitPrice());	
+				CategoryList.setCompanyName(rs.getString("CompanyName"));			//*5
+				System.out.println("ProductID:=" + CategoryList.getCompanyName());
+				CategoryList.setCategoryName(rs.getString("CategoryName"));			//*6
+				System.out.println("ProductID:=" + CategoryList.getCategoryName()); 
+				List.add(CategoryList);
+			}
+			preparedStmt.close();
+			rs.close(); // ปิดการทำงาน rs
+			dbconConnection.close(); // ปิดการทำงาน dbconConnection
+
+		} catch (Exception e) {
+			e.printStackTrace(); // เเสดงค่าภาษา SQL ที่เกิดของผิดพลาด
+		}
+		return List;
+	}
 }
