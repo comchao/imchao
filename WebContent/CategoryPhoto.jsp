@@ -12,6 +12,11 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <!-- Bootstrap 3.3.6 -->
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet"
@@ -560,48 +565,84 @@
 					<!-- /.col -->
 				</div>
 				<!-- /.row -->
+				
+				
+				
+ <!-- Page Content -->
+    <div class="container">
 
+        <div class="row">
 
-				<div class="box-footer">
-					<div class="row">
-						<div class="col-sm-3 col-xs-6">
-
-							<%
+            <div class="col-lg-12">
+                <h1 class="page-header">CategoryPhoto</h1>
+            </div>
+            
+            <form action="CategoryIDServlet" method="get">
+            
+            
+            
+            	<%
 								ArrayList<CategoryBean> categories = (ArrayList<CategoryBean>) request.getAttribute("categoryList");
 								int i = 1;
 								for (CategoryBean categoryBean : categories) {
 							%>
-							<div class="col-md-55">
-								<div class="thumbnail">
-									<div class="image view view-first">
-										<img style="width: 100%; display: block;"
-											src="categotyServlet?id=<%=i%>" alt="image">
-										<div class="mask"></div>
+            
 
-									</div>
-
-									<div class="caption">
-										<center>
-											<h4>
-												<p><%=categoryBean.getCategoryName()%></p>
-											</h4>
-										</center>
-
-
-									</div>
-
-								</div>
-								<center>
-									<button class="btn btn-small btn-primary" style="width: 176px;"
-										name="id" value="<%=i%>">รายละเอียด</button>
-								</center>
-							</div>
-
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="CategoryIDServlet?id=<%=categoryBean.getCategoryID()%>">
+                    <img class="img-responsive" src="categotyServlet?id=<%=categoryBean.getCategoryID()%>" alt="image">
+                    
+                    	
+                </a>
+                	<center><%=categoryBean.getCategoryName()%></p ></center>           	            </div>
+          
+				
 							<%
 								i++;
 								}
 							%>
-						</div>
+							</form>
+			
+			</div>
+           
+           
+           
+           
+           
+           
+           
+    
+           
+           
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						<!-- /.description-block -->
 
 					</div>
@@ -621,6 +662,11 @@
 
 			</div>
 			<!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
 			<!-- jQuery 2.2.3 -->
 			<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>

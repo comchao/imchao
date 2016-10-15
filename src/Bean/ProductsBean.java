@@ -7,8 +7,22 @@ public class ProductsBean {
 	 String QuantityPerUnit;        //5
 	 float UnitPrice;               //6
 	 int UnitsInStock;              //7
+	 String CompanyName ;           //8 *  
+	 String  CategoryName;          //9 *
 	 public int getProductID() {
 		return ProductID;
+	}
+	public String getCompanyName() {
+		return CompanyName;
+	}
+	public void setCompanyName(String companyName) {
+		CompanyName = companyName;
+	}
+	public String getCategoryName() {
+		return CategoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		CategoryName = categoryName;
 	}
 	public void setProductID(int productID) {
 		ProductID = productID;
