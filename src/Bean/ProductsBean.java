@@ -84,5 +84,12 @@ public class ProductsBean {
 	int UnitsOnOrder;              //8
 	 int ReorderLevel;              //9
 	 int Discontinued;              //10
+	 boolean valid; 				//11
+	public boolean isValid() {
+		return valid;
+	}
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
 
 }

@@ -517,61 +517,44 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">ข้อมูลสินค้าทั้งหมด</h3>
+              <h3 class="box-title">แก้ไขข้อมูลสินค้า</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>ProductID</th> 					<!-- 1 -->
-                  <th>ProductName</th>					<!-- 2 -->
-                  <th>QuantityPerUnit</th>					<!-- 3-->
-                  <th>UnitPrice</th>					<!-- 4 -->
-                  <th>CompanyName</th>			    <!-- 5-->
-                  <th>CategoryName</th>					<!-- 6-->
-                  <th>UPDATE</th>					<!-- 7-->
-                  
-                </tr>
-                </thead>
-                <tbody>
-                 <% ArrayList<ProductsBean> List =(ArrayList)request.getAttribute("DataTable");
-ProductsBean bean; 
-for (int i=0; i<List.size(); i++){
-	          bean = (ProductsBean) List.get(i);
-	          %> 
-                <tr>
-                 <td><%=bean.getProductID() %></td> 				<!-- 1 -->
-				<td><%=bean.getProductName() %></td>				<!-- 2 -->
-				<td><%=bean.getQuantityPerUnit()%></td>					<!-- 3 -->
-				<td><%=bean.getUnitPrice()%></td>					<!-- 4 -->
-				<td><%=bean.getCategoryName() %></td>			<!-- 5 -->
-				<td><%=bean.getCompanyName()%></td>					<!-- 6 -->
-				
-					                           <!--     ส่วนของการเเก้ไขข้อมูล -->
-					<form action="Update.jsp" method="post">
-					<td> <input type="submit" name="" value="แก้ไข" ></td>	
-					   <!-- 1 --><input type="hidden" name="ProductID" value="<%=bean.getProductID() %>"> 
-					  <!-- 2 --> <input type="hidden" name="ProductName" value="<%=bean.getProductName() %>">
-					   <!-- 3 --><input type="hidden" name="QuantityPerUnit" value="<%=bean.getQuantityPerUnit()%>">
-					   <!-- 4 --><input type="hidden" name="UnitPrice" value="<%=bean.getUnitPrice()%>">
-					  <!-- 5 --> <input type="hidden" name="CategoryName" value="<%=bean.getCategoryName() %>">
-					  <!-- 6 --> <input type="hidden" name="CompanyName" value="<%=bean.getCompanyName()%>"> 
-					   </form>
-					
-					
-									
-		            
-                        	
-                </tr>
-           
-                    <% } %>
+
+               
+               <%                /*   ทำให้เป็นภาษาไทย */
+                       request.setCharacterEncoding("utf-8");  
+       		           response.setCharacterEncoding("utf-8");
+                                  /*รับค่าเเก้ไข */
+               String ProductID = request.getParameter("ProductID");
+               String ProductName = request.getParameter("ProductName");
+               String QuantityPerUnit = request.getParameter("QuantityPerUnit");
+               String UnitPrice = request.getParameter("UnitPrice");
+               String CategoryName = request.getParameter("CategoryName");
+               String CompanyName = request.getParameter("CompanyName");
+               
+               
+               
+               %>
+                                <form action="UpdateServlet"method="post">
+
+                       <!-- 1 -->ProductID<input type="text" name="ProductID" value="<%=ProductID%>"> <br>
+					  <!-- 2 -->ProductName  :<input type="text" name="ProductName" value="<%=ProductName%>"> <br>
+					   <!-- 3 -->QuantityPerUnit: <input type="text" name="QuantityPerUnit" value="<%=QuantityPerUnit%>"> <br>
+					   <!-- 4 -->UnitPrice: <input type="text" name="UnitPrice" value="<%=UnitPrice%>"> <br>
+					  <!-- 5 --> CategoryName: <input type="text" name="CategoryName" value="<%=CategoryName%>"> <br>
+					  <!-- 6 -->CompanyName :<input type="text" name="CompanyName" value="<%=CompanyName%>">  <br>
+                                       <input type="submit"value="แก้ไขข้อมูล"> 
+              </form>
+              
+              
+              
+              
+              
               
               
              
-                
-              </table>
-                 
             </div>
             <!-- /.box-body -->
           </div>
