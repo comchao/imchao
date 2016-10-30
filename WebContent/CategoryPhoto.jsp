@@ -590,7 +590,7 @@
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="CategoryIDServlet?id=<%=categoryBean.getCategoryID()%>">
-                    <img class="img-responsive" src="categotyServlet?id=<%=categoryBean.getCategoryID()%>" alt="image">
+                    <img class="img-responsive" src="CategotyServlet?id=<%=categoryBean.getCategoryID()%>" alt="image">
                     
                     	
                 </a>

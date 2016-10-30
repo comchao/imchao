@@ -76,7 +76,7 @@ public class UpdateServlet extends HttpServlet {
 		out.println("<html>");
 		out.println(" <body>");
 		out.println(
-				" <script>alert('สำเร็จ');window.location='categoryServlet';</script>");
+				" <script>alert('สำเร็จ');window.location='CategotyServlet';</script>");
 		out.println(" </body>");
 		out.println("</html>");
 	} else {
@@ -86,7 +86,7 @@ public class UpdateServlet extends HttpServlet {
 		out.println("<html>");
 		out.println(" <body>");
 		out.println(
-				" <script>alert('ไม่สำเร็จ');window.location='categoryServlet';</script>");
+				" <script>alert('ไม่สำเร็จ');window.location='CategotyServlet';</script>");
 		out.println(" </body>");
 		out.println("</html>");
 	}

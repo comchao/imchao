@@ -23,7 +23,7 @@ import DAO.CategoryDAO;
 /**
  * Servlet implementation class productServlet
  */
-@WebServlet("/categotyServlet")
+@WebServlet("/CategotyServlet")
 public class categoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

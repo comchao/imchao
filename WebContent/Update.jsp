@@ -539,24 +539,82 @@
                %>
                                 <form action="UpdateServlet"method="post">
 
-                       <!-- 1 -->ProductID<input type="text" name="ProductID" value="<%=ProductID%>"> <br>
-					  <!-- 2 -->ProductName  :<input type="text" name="ProductName" value="<%=ProductName%>"> <br>
-					   <!-- 3 -->QuantityPerUnit: <input type="text" name="QuantityPerUnit" value="<%=QuantityPerUnit%>"> <br>
-					   <!-- 4 -->UnitPrice: <input type="text" name="UnitPrice" value="<%=UnitPrice%>"> <br>
-					  <!-- 5 --> CategoryName: <input type="text" name="CategoryID" value="<%=CategoryName%>"> <br>
-					  <!-- 6 -->CompanyName :<input type="text" name="CompanyName" value="<%=CompanyName%>">  <br>
+                       <!-- 1 -->ProductID<input type="text" name="ProductID" value="<%=ProductID%>"> <br><br>
+					  <!-- 2 -->ProductName  :<input type="text" name="ProductName" value="<%=ProductName%>"> <br><br>
+					   <!-- 3 -->QuantityPerUnit: <input type="text" name="QuantityPerUnit" value="<%=QuantityPerUnit%>"><br> <br>
+					   <!-- 4 -->UnitPrice: <input type="text" name="UnitPrice" value="<%=UnitPrice%>"> <br><br>
+					  <!--  --> CategoryName: <select  name="CategoryID">
+					 <option value=""><%=CategoryName%></option>
+					  <option value="1">Beverages</option>
+					  <option value="2">Condiments</option>
+					  <option value="3">Confections</option>
+					  <option value="4">Confections</option>
+					  <option value="5">Grains/Cereals</option>
+					  <option value="6">Meat/Poultry</option>
+					  <option value="7">Produce </option>
+					  <option value="8">Seafood </option>
+					  
+					  </select>
+					  
+					 <br>
+					 
                                        <input type="submit"value="แก้ไขข้อมูล"> 
               </form>
               
               
               
+              <br>
               
-              
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
+                   <br>
               
               
              
             </div>
-            <!-- /.box-body -->
+            <!-- /.bo x-body -->
           </div>
           <!-- /.box -->
         </div>
