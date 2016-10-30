@@ -543,7 +543,7 @@
 					  <!-- 2 -->ProductName  :<input type="text" name="ProductName" value="<%=ProductName%>"> <br>
 					   <!-- 3 -->QuantityPerUnit: <input type="text" name="QuantityPerUnit" value="<%=QuantityPerUnit%>"> <br>
 					   <!-- 4 -->UnitPrice: <input type="text" name="UnitPrice" value="<%=UnitPrice%>"> <br>
-					  <!-- 5 --> CategoryName: <input type="text" name="CategoryName" value="<%=CategoryName%>"> <br>
+					  <!-- 5 --> CategoryName: <input type="text" name="CategoryID" value="<%=CategoryName%>"> <br>
 					  <!-- 6 -->CompanyName :<input type="text" name="CompanyName" value="<%=CompanyName%>">  <br>
                                        <input type="submit"value="แก้ไขข้อมูล"> 
               </form>

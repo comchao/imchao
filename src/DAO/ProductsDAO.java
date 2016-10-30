@@ -202,18 +202,22 @@ public class ProductsDAO {
 	        //2.คำสั่งSQLUpdate	    
 		String  UpdateSQL = "update products "
 				+ "set ProductName = ?,UnitPrice=?,QuantityPerUnit=?,"
-				+ "CategoryName=?,CompanyName=? Where ProductID = ? ";
+				+ "CategoryID=? Where ProductID = ? ";
 		try{
 			// 3. เชื่อมต่อฐานข้อมูล
 			 dbconConnection = ConnectionManager.getConnection(); 
              //4. run คําสั่ง preparedStmt
 			 preparedStmt = dbconConnection.prepareStatement(UpdateSQL); 
+			 
+			 
+			 
+			 
+			 
 			 preparedStmt.setString(1,Bean.getProductName());      //1
 			 preparedStmt.setFloat(2,Bean.getUnitPrice());         //2
 			 preparedStmt.setString(3,Bean.getQuantityPerUnit());  //3
-			 preparedStmt.setString(4,Bean.getCategoryName());    //4
-			 preparedStmt.setString(5,Bean.getCompanyName());    //5
-			 preparedStmt.setInt(6,Bean.getProductID());          //6 ค่าที่  Where
+			 preparedStmt.setInt(4,Bean.getCategoryID());    //4
+			 preparedStmt.setInt(5,Bean.getProductID());          //6 ค่าที่  Where
 			 preparedStmt.executeUpdate();
 			 //เช็คค่าGET Bean
 			 Bean.setValid(true);

@@ -55,10 +55,9 @@ public class UpdateServlet extends HttpServlet {
   System.out.println("QuantityPerUnit"+QuantityPerUnit);         //เเสดงค่าที่รับมา  
   String UnitPrice = request.getParameter("UnitPrice");              //4
   System.out.println("UnitPrice:"+UnitPrice);                    //เเสดงค่าที่รับมา  
-  String CategoryName = request.getParameter("CategoryName");        //5
-  System.out.println("CategoryName:"+CategoryName);               //เเสดงค่าที่รับมา  
-  String CompanyName = request.getParameter("CompanyName");          //6
-  System.out.println("CompanyName:"+CompanyName);                   //เเสดงค่าที่รับมา  
+  String CategoryID = request.getParameter("CategoryID");        //5
+  System.out.println("CategoryName:"+CategoryID);               //เเสดงค่าที่รับมา  
+  
   
   //SET Bean 
   ProductsBean Bean = new ProductsBean ();
@@ -66,8 +65,8 @@ public class UpdateServlet extends HttpServlet {
   Bean.setProductName(ProductName);			//2
   Bean.setUnitPrice(Float.parseFloat(UnitPrice));//3
   Bean.setQuantityPerUnit(QuantityPerUnit);  //4
-  Bean.setCategoryName(CategoryName);  //5
-  Bean.setCompanyName(CompanyName);//6
+  Bean.setCategoryID(Integer.parseInt(CategoryID));  //5
+ 
   //เรียกใช้ DAO
   ProductsDAO.UpdateProduct(Bean);
 	if(Bean.isValid()){
